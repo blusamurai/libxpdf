@@ -42,12 +42,18 @@ jobs:
         run: brew install p7zip 
         if: contains(matrix.config.os, 'mac') == true
         
+      - name: Setup Ninja
+        uses: ashutoshvarma/setup-ninja@master
+        with:
+          # ninja version to download. Default: 1.10.0
+          version: 1.10.0
+      
       - name: Build & Test
         uses: ashutoshvarma/action-cmake-build@master
         with:
           cc: ${{ matrix.config.cc }}
           cxx: ${{ matrix.config.cxx }}
-          configure-options: ${{ matrix.config.cmake-configure-args }}
+          configure-options: ${{ matrix.config.cmake-configure-args }} -G Ninja
           ctest-options: -R xpdf 
           run-test: true
           parallel: 14
