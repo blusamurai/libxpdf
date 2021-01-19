@@ -27,8 +27,8 @@ jobs:
 
       - name: Setup CFLAGS && CXXFLAGS for x86 gcc & clang
         run: |
-          echo ::set-env name=CFLAGS::-m32
-          echo ::set-env name=CXXFLAGS::-m32
+          echo "{CFLAGS}={-m32}" >> $GITHUB_ENV
+          echo "{CXXFLAGS}={-m32}" >> $GITHUB_ENV
         shell: bash
         if: (contains(matrix.config.name, '64') != true) && (contains(matrix.config.os, 'windows') != true)
       
@@ -43,7 +43,7 @@ jobs:
         if: contains(matrix.config.os, 'mac') == true
         
       - name: Setup Ninja
-        uses: ashutoshvarma/setup-ninja@master
+        uses: ashutoshvarma/setup-ninja@v1.1
         with:
           # ninja version to download. Default: 1.10.0
           version: 1.10.0
