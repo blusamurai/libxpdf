@@ -31,7 +31,3 @@ Use CMAKE_C_FLAGS variable to add specific compilation flags to C compiler, and 
 To set other xpdf build options read their   [INSTALL](https://github.com/ashutoshvarma/libxpdf/blob/master/xpdf-4.02/INSTALL)
 
 Xpdf tools can be build along library using `BUILD_TOOLS` cmake option. Disabled by default.
-
-
-
-
