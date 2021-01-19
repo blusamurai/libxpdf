@@ -16,7 +16,7 @@ jobs:
           - { name: "Windows MSVC x86_64", os: windows-latest, cc: "cl", cxx: "cl", artifact: "vs2019.win64",cmake-configure-args: "-A x64"}
           - { name: "Windows MSVC x86", os: windows-latest, cc: "cl", cxx: "cl", artifact: "vs2019.win32", cmake-configure-args: "-A Win32"}
           - { name: "Ubuntu GCC x86_64", os: ubuntu-latest, cc: "gcc", cxx: "g++", artifact: "linux-gcc.x64", cmake-configure-args: "-G Ninja"}
-          - { name: "Ubuntu GCC x86", os: ubuntu-latest, cc: "gcc", cxx: "g++", artifact: "linux-gcc.x86", cmake-configure-args: "-DM_LIBRARY=/lib32/libm.so.6 -G Ninja"}
+          - { name: "Ubuntu GCC x86", os: ubuntu-latest, cc: "gcc", cxx: "g++", artifact: "linux-gcc.x86", cmake-configure-args: "-G Ninja"}
           - { name: "macOS Clang x86_64", os: macos-latest, cc: "clang", cxx: "clang++", artifact: "macos-clang.x64", cmake-configure-args: "-G Ninja"}
 #           - { name: "macOS Clang x86", os: macos-latest, cc: "gcc-9", cxx: "g++-9"}
     steps:
